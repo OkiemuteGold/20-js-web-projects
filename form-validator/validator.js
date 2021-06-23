@@ -28,7 +28,6 @@ function showSuccess(input) {
 // Check required for all fields
 function checkRequired(inputArray) {
     inputArray.forEach(function (input) {
-        console.log(input.id);
         if (input.value.trim() === "") {
             showError(input, `${getFieldName(input)} is required`);
         } else {
@@ -66,6 +65,12 @@ function checkEmail(input) {
     }
 }
 
+function checkPasswordMatch(input1, input2) {
+    if (input1.value !== input2.value) {
+        showError(input2, "Passwords do not match");
+    }
+}
+
 // Get field name and Capitalize first letter
 function getFieldName(input) {
     return input.id.charAt(0).toUpperCase() + input.id.slice(1);
@@ -80,4 +85,5 @@ form.addEventListener("submit", (e) => {
     checkLength(username, 3, 15);
     checkLength(password, 6, 20);
     checkEmail(email);
+    checkPasswordMatch(password, password2);
 });
