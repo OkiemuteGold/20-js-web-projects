@@ -8,11 +8,11 @@
     box-sizing: border-box;
 }
 ::selection {
-    background-color: rgb(242, 100, 49);
+    background-color: #3498db;
     color: #f4f4f4;
 }
 ::-moz-selection {
-    background-color: rgb(242, 100, 49);
+    background-color: #3498db;
     color: #f4f4f4;
 }
 body {
@@ -78,6 +78,7 @@ body {
     border-radius: 5px;
     border: 2px solid #f0f0f0;
     font-size: 14px;
+    transition: 0.4s ease-in-out;
 }
 
 .form-control input:focus {
@@ -98,12 +99,9 @@ body {
     bottom: 0;
     left: 0;
     display: none;
+    transition: 0.4s ease-in-out;
 }
 .form-control.error small {
-    color: var(--error-color);
-    position: absolute;
-    bottom: 0;
-    left: 0;
     display: inline-block;
 }
 
