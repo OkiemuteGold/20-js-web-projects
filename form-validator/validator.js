@@ -38,7 +38,9 @@ function checkRequired(inputArray) {
 
 // Check password and username length
 function checkLength(input, min, max) {
-    if (input.value.length < min) {
+    if (input.value.length === 0) {
+        showError(input, `${getFieldName(input)} is required`);
+    } else if (input.value.length < min) {
         showError(
             input,
             `${getFieldName(input)} must be at least ${min} characters`
@@ -60,13 +62,17 @@ function checkEmail(input) {
 
     if (re.test(input.value.trim())) {
         showSuccess(input);
+    } else if (input.value.length === 0) {
+        showError(input, `${getFieldName(input)} is required`);
     } else {
         showError(input, "Email is not valid");
     }
 }
 
 function checkPasswordMatch(input1, input2) {
-    if (input1.value !== input2.value) {
+    if (input1.value.length !== 0 && input2.value.length === 0) {
+        showError(input2, "Password2 is required");
+    } else if (input1.value !== input2.value) {
         showError(input2, "Passwords do not match");
     }
 }
