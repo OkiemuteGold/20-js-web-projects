@@ -29,6 +29,13 @@ function updateSelectedCount() {
 
     count.innerText = selectedSeatsCount;
     totalPrice.innerText = selectedSeatsCount * ticketPrice;
+
+    /* change seat text based on number */
+    if (selectedSeatsCount <= 1) {
+        pluralizeSeat.innerText = "seat";
+    } else {
+        pluralizeSeat.innerText = "seats"
+    }
 };
 
 function updateUI() {

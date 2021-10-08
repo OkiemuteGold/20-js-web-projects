@@ -17,6 +17,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    line-height: 22px;
     font-family: "Lato", sans-serif;
     letter-spacing: 0.25px;
     word-spacing: 0.5px;
@@ -40,11 +41,11 @@ body {
     border: 0;
     border-radius: 5px;
     font-size: 14px;
-    margin-left: 10px;
-    padding: 8px 15px;
-    -moz-appearance: none;
-    -webkit-appearance: none;
-    appearance: none;
+    margin-left: 8px;
+    padding: 6px 12px 6px 6px;
+    -moz-appearance: button-arrow-down;
+    -webkit-appearance: button-arrow-down;
+    appearance: button-arrow-down;
 }
 
 #showcase_movie {
@@ -77,9 +78,10 @@ body {
 #seat_container .screen {
     height: 70px;
     width: 100%;
+    max-width: 285px;
+    margin: 15px auto;
     background-color: #f7f7f7;
     box-shadow: 0 3px 10px rgba(247, 247, 247, 0.7);
-    margin: 15px 0;
     transform: rotateX(-45deg);
     border-radius: 1px;
 }
@@ -153,9 +155,20 @@ body {
 }
 
 p.text {
-    margin: 5px 0;
+    margin: 5px auto;
+    padding: 0 10px;
+    text-align: left;
 }
 
 p.text span {
     color: #6feaf6;
+}
+
+@media screen and (max-width: 321px) {
+    #showcase_movie {
+        padding: 4px 6px;
+    }
+    #showcase_movie li {
+        margin: 0 10px;
+    }
 }

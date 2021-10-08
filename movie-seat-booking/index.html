@@ -11,7 +11,7 @@
 <body>
     <div id="movie_container">
         <div class="select_container">
-            <label for="movie">Pick a movie:</label>
+            <label for="movie" aria-label="select movie">Pick a movie:</label>
     
             <select name="movie" id="movie">
                 <option value="10">Avengers Endgame ($10)</option>
@@ -108,7 +108,7 @@
     </div>
 
     <p class="text">
-        You have selected <span id="count">0</span> <span id="plural_seat">seats</span> for a price of $<span id="total_price">0</span>.
+        You have selected <span id="count">0</span> <span id="plural_seat">seats</span> for a price of <wbr>$<span id="total_price">0</span></wbr>.
     </p>
 
     <script src="main.js"></script>
